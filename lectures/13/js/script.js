@@ -26,11 +26,51 @@ var correctAnswers = 0;
 var quizOver = false;
 displayCurrentQuestion();
 document.getElementById("quiz-message").style.display = 'none';
+var x = document.createElement("INPUT");
+x.setAttribute("type", "");
+
+
+
+
+
 function displayNext() {
-    /*Write your code here */
+
+
 }
 
-function displayCurrentQuestion() {
+
+function displayCurrentQuestion()
+{
+
+
+
+
+    document.getElementById("question").innerHTML = questions[0].question;
+
+
+
+
+    var i=0;
+    for ( ; i < 4; i++)
+    {
+
+        document.getElementById("choice-list").innerHTML += questions[0].choices[i] + "<br>"  ;
+
+        document.querySelector("input[name='dq']:checked");
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
     /*Write your code here */
 }
 
