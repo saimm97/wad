@@ -14,6 +14,47 @@ require "server/functions.php";
 </head>
 <body>
 
+
+
+
+<script>
+
+
+
+    function checkprod(str) {
+
+        if (str.length == 0) {
+            document.getElementById("content").innerHTML = "";
+            return;
+        } else {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("content").innerHTML = this.responseText;
+                }
+            };
+            xmlhttp.open("GET", "check_prod.php?e=" + str, true);
+            xmlhttp.send();
+            //document.getElementById('hint').innerHTML = 'loading...';
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+</body>
+
 <header class="container-fluid">
     <div class="row">
         <div class="col-12 no-padding">
@@ -31,9 +72,10 @@ require "server/functions.php";
                             <div class="input-group">
                                 <input type="search" class="form-control"
                                        id="search-bar" name="search"
-                                       placeholder="Find Mobile Phones, Laptops, and more..">
+                                       placeholder="Find Mobile Phones, Laptops, and more.."
+                                onkeyup="checkprod(this.value)">
                                 <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary btn-lg" type="submit"><i class="fas fa-search"></i></button>
+                                    <button class="btn btn-outline-secondary btn-lg" type="submit"><i class="fas fa-search"></i></button >
                                 </div>
                             </div>
                         </form>

@@ -6,7 +6,7 @@ $e = $_REQUEST["e"];
 $sel_prod = "select * from products where pro_title= '$e'";
 $run_prod  = mysqli_query($con,$sel_prod);
 $count = mysqli_num_rows($run_prod);
-if($count<0) {
+if($count>0) {
 
 
     $get_pro = "select * from products";
